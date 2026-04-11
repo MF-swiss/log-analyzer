@@ -16,7 +16,7 @@ public class App {
 
     // Pfad zur Log-Datei angeben
     Path logFile = Path.of("logs/app.log");
-    // Alle Zeilen der Log-Datei einlesen und parsen (Parsen = Zerlegt um weiter zu verwenden)
+    // Alle Zeilen der Log-Datei einlesen und parsen (Parsen = Zerlegt um weiter zu)
     List<LogEntry> entries = reader.read(logFile);
     String report = generator.createReport(entries);
 
