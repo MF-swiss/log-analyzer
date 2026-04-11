@@ -1,0 +1,20 @@
+2026-04-11T08:00:00 INFO Marco 10.0.0.1 Login erfolgreich
+2026-04-11T08:05:00 INFO Dominique 10.0.0.2 Login erfolgreich
+2026-04-11T08:10:00 WARNING Luca 10.0.0.3 Langsame Antwortzeit
+2026-04-11T08:15:00 ERROR Marina 10.0.0.4 Datenbankfehler
+2026-04-11T08:20:00 INFO Marco 10.0.0.1 Datei hochgeladen
+2026-04-11T08:25:00 ERROR Luca 10.0.0.3 Verbindung abgelehnt
+2026-04-11T08:30:00 WARNING Dominique 10.0.0.2 Timeout
+2026-04-11T08:35:00 INFO Marina 10.0.0.4 Bericht generiert
+2026-04-11T08:40:00 ERROR Marco 10.0.0.1 Datenbankfehler
+2026-04-11T08:45:00 INFO Dominique 10.0.0.2 Logout
+2026-04-11T08:50:00 ERROR Marina 10.0.0.4 Authentifizierung fehlgeschlagen
+2026-04-11T08:55:00 INFO Luca 10.0.0.3 Login erfolgreich
+2026-04-11T09:00:00 WARNING Marco 10.0.0.1 Hohe CPU-Auslastung
+2026-04-11T09:05:00 ERROR Dominique 10.0.0.2 Verbindung abgelehnt
+2026-04-11T09:10:00 INFO Marina 10.0.0.4 Logout
+2026-04-11T09:15:00 INFO Luca 10.0.0.3 Datei heruntergeladen
+2026-04-11T09:20:00 ERROR Marco 10.0.0.1 Authentifizierung fehlgeschlagen
+2026-04-11T09:25:00 WARNING Marina 10.0.0.4 Timeout
+2026-04-11T09:30:00 INFO Dominique 10.0.0.2 Login erfolgreich
+2026-04-11T09:35:00 ERROR Luca 10.0.0.3 Datenbankfehler
