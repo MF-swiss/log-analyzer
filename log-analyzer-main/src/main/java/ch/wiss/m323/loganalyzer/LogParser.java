@@ -1,5 +1,6 @@
 package ch.wiss.m323.loganalyzer;
 
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 public class LogParser {
@@ -20,4 +21,6 @@ public class LogParser {
       return Optional.of(new LogEntry(timestamp, level, user, message, ipAddress));
     } catch (Exception e) {
       return Optional.empty();
+    }
+  }
 }
