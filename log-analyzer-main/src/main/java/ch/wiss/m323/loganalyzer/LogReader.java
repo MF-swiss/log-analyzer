@@ -11,10 +11,11 @@ public class LogReader {
 
   public List<LogEntry> read(Path path) {
     try {
-      return Files.lines(path)
-          .map(parser::parse)
-          .filter(opt -> opt.isPresent())
-          .map(opt -> opt.get())
+      // Stream-Pipeline: Datei lesen → parsen → filtern → sammeln
+      return Files.lines(path)               // Liest alle Zeilen als Stream
+          .map(parser::parse)                // Jede Zeile → parse() aufrufen
+          .filter(opt -> opt.isPresent())    // Ungültige Zeilen rausfiltern
+          .map(opt -> opt.get())             // Optional<LogEntry> → LogEntry
           .toList();
     } catch (IOException e) {
       System.err.println("Fehler beim Lesen der Datei: " + e.getMessage());

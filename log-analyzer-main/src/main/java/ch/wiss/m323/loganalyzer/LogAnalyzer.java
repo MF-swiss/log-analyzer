@@ -10,8 +10,8 @@ public class LogAnalyzer {
 
   public List<LogEntry> findErrors(List<LogEntry> entries) {
     return entries.stream()
-        .filter(e -> e.level() == LogLevel.ERROR)
-        .toList();
+        .filter(e -> e.level() == LogLevel.ERROR)          
+        .toList();                                         
   }
 
   public long countErrors(List<LogEntry> entries) {
@@ -34,15 +34,15 @@ public class LogAnalyzer {
 
   public Map<String, Long> findMostCommonErrorMessages(List<LogEntry> entries) {
     return entries.stream()
-        .filter(e -> e.level() == LogLevel.ERROR)
-        .collect(Collectors.groupingBy(LogEntry::message, Collectors.counting()))
+        .filter(e -> e.level() == LogLevel.ERROR)                                      // Nur Fehler
+        .collect(Collectors.groupingBy(LogEntry::message, Collectors.counting()))      // Gruppieren nach Message   // und zählen
         .entrySet().stream()
-        .sorted(Map.Entry.<String, Long>comparingByValue().reversed())
+        .sorted(Map.Entry.<String, Long>comparingByValue().reversed())                 // Häufigste zuerst
         .collect(Collectors.toMap(
             Map.Entry::getKey,
             Map.Entry::getValue,
             (a, b) -> a,
-            LinkedHashMap::new));
+            LinkedHashMap::new));      // LinkedHashMap statt HashMap, damit die Sortierung erhalten bleibt
   }
 
   public List<LogEntry> sortChronologically(List<LogEntry> entries) {
