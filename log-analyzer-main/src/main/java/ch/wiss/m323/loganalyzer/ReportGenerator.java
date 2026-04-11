@@ -9,7 +9,7 @@ public class ReportGenerator {
 
   public String createReport(List<LogEntry> entries) {
     StringBuilder sb = new StringBuilder();
-    sb.append("########### LOG REPORT ###########\n");
+    sb.append("########### LOG REPORT ###########\n            **********\n \n");
     sb.append("Einträge total: ").append(entries.size()).append("\n");
     sb.append("Fehler total:   ").append(analyzer.countErrors(entries)).append("\n\n");
 
