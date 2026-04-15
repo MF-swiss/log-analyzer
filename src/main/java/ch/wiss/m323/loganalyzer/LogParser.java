@@ -9,7 +9,7 @@ public class LogParser {
     if (line == null || line.isBlank()) return Optional.empty();
 
     // teilt die Zeile an Leerzeichen, maximal 5 Teile (damit die Message auch Leerzeichen enthalten darf)
-    String[] parts = line.split(" ", 5);                     // split(" ", 5) damit Nachrichten mit Leerzeichen nicht aufgeteilt werden
+    String[] parts = line.split(";", 5);                     // split(";", 5) damit Nachrichten mit Leerzeichen nicht aufgeteilt werden
     if (parts.length < 5) return Optional.empty();
 
     try {
