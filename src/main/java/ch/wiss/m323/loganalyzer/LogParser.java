@@ -8,12 +8,13 @@ public class LogParser {
   public Optional<LogEntry> parse(String line) {
     if (line == null || line.isBlank()) return Optional.empty();
 
-    // teilt die Zeile an Leerzeichen, maximal 5 Teile (damit die Message auch Leerzeichen enthalten darf)
-    String[] parts = line.split(";", 5);                     // split(";", 5) damit Nachrichten mit Leerzeichen nicht aufgeteilt werden
+    // teilt die Zeile an Semikolon, maximal 5 Teile (damit die Message auch Semikolon enthalten darf)
+    String[] parts = line.split(";", 5);
     if (parts.length < 5) return Optional.empty();
 
     try {
-      LocalDateTime timestamp = LocalDateTime.parse(parts[0]);
+      java.time.format.DateTimeFormatter formatter = java.time.format.DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+      LocalDateTime timestamp = LocalDateTime.parse(parts[0], formatter);
       LogLevel level = LogLevel.valueOf(parts[1].toUpperCase());
       String user = parts[2];
       String ipAddress = parts[3];
