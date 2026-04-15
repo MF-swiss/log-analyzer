@@ -1,53 +1,58 @@
-# Log Analyzer – Dokumentation (Version 2.0)
+
+# Log Analyzer – Technische Dokumentation (Version 2.0)
+
 
 ## Projektübersicht
 
-Dieses Projekt ist eine Java-Anwendung zur Analyse von Logdateien. Sie liest Logzeilen ein, wandelt sie in Objekte um, analysiert die Daten mit modernen Java-Streams und gibt einen strukturierten Bericht aus.
+Der Log Analyzer ist eine professionelle Java-Anwendung zur strukturierten Analyse von Logdateien. Die Software liest Logzeilen ein, wandelt diese in Objekte um und wertet die Daten mithilfe moderner Java-Streams aus. Die Ergebnisse werden in einem übersichtlichen, statistisch aufbereiteten Bericht präsentiert.
 
 ---
+
 
 ## Hauptfunktionen
 
 - **Logdateien einlesen:**
-  - Über die Klasse `LogReader` werden Logdateien zeilenweise eingelesen.
+  - Die Klasse `LogReader` übernimmt das zeilenweise Einlesen der Logdateien.
 - **Parsing:**
-  - Die Klasse `LogParser` wandelt jede Logzeile in ein `LogEntry`-Objekt um.
+  - Die Klasse `LogParser` konvertiert jede Logzeile in ein validiertes `LogEntry`-Objekt.
 - **Analyse:**
-  - Die Klasse `LogAnalyzer` bietet Methoden zur Auswertung, z.B. Fehler zählen, Einträge pro Benutzer, häufigste Fehlermeldungen, eindeutige IPs.
+  - Die Klasse `LogAnalyzer` stellt Methoden zur Verfügung, um Fehler zu zählen, Einträge pro Benutzer zu ermitteln, häufigste Fehlermeldungen zu identifizieren und eindeutige IP-Adressen zu extrahieren.
 - **Berichtserstellung:**
-  - Die Klasse `ReportGenerator` erzeugt einen ausführlichen Analysebericht mit Statistiken und Zusammenfassungen.
-- **Startpunkt:**
-  - Die Klasse `App` ist der Einstiegspunkt und steuert den Ablauf.
+  - Die Klasse `ReportGenerator` generiert einen detaillierten Analysebericht mit allen relevanten Statistiken.
+- **Applikationseinstieg:**
+  - Die Klasse `App` bildet den Einstiegspunkt und steuert den gesamten Ablauf der Anwendung.
 
 ---
 
 
-## Aufbau der Logdatei
 
-Eine Logzeile hat das Format:
+## Format der Logdatei
+
+Jede Logzeile muss exakt folgendem Format entsprechen:
 ```
-YYYY-MM-DD HH:MM:SS;LEVEL;USER;IP;MESSAGE
+YYYY-MM-DD HH:MM:SS;LEVEL;USER;MESSAGE;IP
 ```
 Beispiel:
 ```
-2026-04-11 08:00:00;INFO;Marco;192.168.0.12;Login erfolgreich
+2026-04-11 08:00:00;INFO;Marco;Login erfolgreich;192.168.0.12
 ```
-Das Datumsformat wird beim Parsen explizit mit `yyyy-MM-dd HH:mm:ss` verarbeitet.
-Die Logdatei muss im Projektverzeichnis im Ordner `logs/app.log` liegen.
+Das Datumsformat wird beim Parsen explizit mit `yyyy-MM-dd HH:mm:ss` verarbeitet. Die Logdatei ist im Projektverzeichnis unter `logs/app.log` zu platzieren.
 
 ---
 
-## Troubleshooting
+
+## Fehlerbehebung
 
 - **Keine Einträge im Bericht?**
-  - Prüfe, ob das Datumsformat in der Logdatei exakt `yyyy-MM-dd HH:mm:ss` ist (z. B. `2026-04-11 08:00:00`).
-  - Stelle sicher, dass die Datei `logs/app.log` existiert und das Programm aus dem Projektverzeichnis gestartet wird.
-  - Bei Fehlern wird eine Meldung in der Konsole ausgegeben (z. B. "Fehler beim Lesen der Datei").
+  - Überprüfen Sie, ob das Datumsformat in der Logdatei exakt `yyyy-MM-dd HH:mm:ss` entspricht (z. B. `2026-04-11 08:00:00`).
+  - Stellen Sie sicher, dass die Datei `logs/app.log` existiert und die Anwendung aus dem Projektverzeichnis gestartet wird.
+  - Bei Fehlern gibt die Anwendung eine aussagekräftige Fehlermeldung in der Konsole aus.
 
 
 ---
 
-## Beispiel-Ausgabe des Berichts
+
+## Beispielhafter Analysebericht
 
 ```
 ########### LOG REPORT ###########
@@ -79,46 +84,53 @@ Aktivster Benutzer: admin
 
 ---
 
-## Tests
 
-- Die wichtigsten Funktionen werden durch Unit-Tests abgedeckt:
-  - Parsing von Logzeilen (`LogParserTest`)
-  - Fehlerzählung und Analyse (`LogAnalyzerTest`)
-  - Berichtserstellung und Statistiken (`ReportGeneratorTest`)
-  - **IP-Validierung:** Es wird getestet, dass nur gültige IPv4-Adressen (0.0.0.0 bis 255.255.255.255) akzeptiert werden (`LogEntryTest`).
-- Tests ausführen mit:
-  ```
-  mvn test
-  ```
+## Testabdeckung
 
----
+Die Anwendung wird durch umfassende Unit-Tests abgesichert:
+- Parsing von Logzeilen (`LogParserTest`)
+- Fehlerzählung und Analyse (`LogAnalyzerTest`)
+- Berichtserstellung und Statistiken (`ReportGeneratorTest`)
+- **IP-Validierung:** Es wird geprüft, dass nur gültige IPv4-Adressen (0.0.0.0 bis 255.255.255.255) akzeptiert werden (`LogEntryTest`).
 
-## Hinweise für Lernende
-
-- Die Anwendung ist modular aufgebaut: Jede Klasse hat eine klar abgegrenzte Aufgabe.
-- Die Analyse nutzt moderne Java-Streams und Lambdas.
-- Die wichtigsten Auswertungen (z. B. aktivster Benutzer, häufigste IP) sind im Bericht enthalten.
-- Die Logdatei muss im Projektverzeichnis unter `logs/app.log` liegen.
-- Der Code ist so kommentiert, dass auch Einsteiger ihn gut nachvollziehen können.
-- **Tipp:** Die Tests können als Vorlage für eigene Erweiterungen genutzt werden.
+Alle Tests können mit folgendem Befehl ausgeführt werden:
+```
+mvn test
+```
 
 ---
 
-## Erweiterungsmöglichkeiten
 
-- Unterstützung für weitere Logformate
-- Export des Berichts als Datei
+## Hinweise zur Nutzung und Erweiterung
+
+- Die Anwendung ist modular aufgebaut, jede Klasse übernimmt eine klar definierte Aufgabe.
+- Die Analyse erfolgt ausschließlich mit modernen Java-Streams und Lambda-Ausdrücken.
+- Die wichtigsten Auswertungen (z. B. aktivster Benutzer, häufigste IP-Adresse) sind im Bericht enthalten.
+- Die Logdatei muss im Projektverzeichnis unter `logs/app.log` abgelegt werden.
+- Der Quellcode ist umfassend kommentiert und eignet sich auch für die Einarbeitung in fortgeschrittene Java-Techniken.
+- Die bereitgestellten Tests können als Grundlage für eigene Erweiterungen dienen.
+
+---
+
+
+## Erweiterungspotenzial
+
+- Unterstützung zusätzlicher Logformate
+- Export des Analyseberichts als Datei
 - Filterung nach Zeitraum oder Benutzer
-- Grafische Oberfläche (GUI)
+- Entwicklung einer grafischen Benutzeroberfläche (GUI)
 - Erweiterte Validierung und Fehlerbehandlung für Logzeilen
 
 ---
 
+
 ## Autoren
-- Vorlage: Lehrperson
-- Umsetzung: Lernender
+
+- Konzept: Lehrperson
+- Implementierung: Lernender
 
 ---
+
 
 ## Stand
 April 2026
