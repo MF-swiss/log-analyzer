@@ -17,8 +17,8 @@ public class LogParser {
       LocalDateTime timestamp = LocalDateTime.parse(parts[0], formatter);
       LogLevel level = LogLevel.valueOf(parts[1].toUpperCase());
       String user = parts[2];
-      String ipAddress = parts[3];
-      String message = parts[4];
+      String message = parts[3];
+      String ipAddress = parts[4];
 
       return Optional.of(new LogEntry(timestamp, level, user, message, ipAddress));
     } catch (Exception e) {

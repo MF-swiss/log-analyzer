@@ -1,20 +1,20 @@
-2026-04-11 08:00:00;INFO;Marco;192.168.0.12;Login erfolgreich
-2026-04-11 08:05:00;INFO;Dominique;192.168.0.13;Login erfolgreich
-2026-04-11 08:10:00;WARNING;Luca;192.168.0.14;Langsame Antwortzeit
-2026-04-11 08:15:00;ERROR;Marina;192.168.0.15;Datenbankfehler
-2026-04-11 08:20:00;INFO;Marco;192.168.0.12;Datei hochgeladen
-2026-04-11 08:25:00;ERROR;Luca;192.168.0.14;Verbindung abgelehnt
-2026-04-11 08:30:00;WARNING;Dominique;192.168.0.13;Timeout
-2026-04-11 08:35:00;INFO;Marina;192.168.0.15;Bericht generiert
-2026-04-11 08:40:00;ERROR;Marco;192.168.0.12;Datenbankfehler
-2026-04-11 08:45:00;INFO;Dominique;192.168.0.13;Logout
-2026-04-11 08:50:00;ERROR;Marina;192.168.0.15;Authentifizierung fehlgeschlagen
-2026-04-11 08:55:00;INFO;Luca;192.168.0.14;Login erfolgreich
-2026-04-11 09:00:00;WARNING;Marco;192.168.0.12;Hohe CPU-Auslastung
-2026-04-11 09:05:00;ERROR;Dominique;192.168.0.13;Verbindung abgelehnt
-2026-04-11 09:10:00;INFO;Marina;192.168.0.15;Logout
-2026-04-11 09:15:00;INFO;Luca;192.168.0.14;Datei heruntergeladen
-2026-04-11 09:20:00;ERROR;Marco;192.168.0.12;Authentifizierung fehlgeschlagen
-2026-04-11 09:25:00;WARNING;Marina;192.168.0.15;Timeout
-2026-04-11 09:30:00;INFO;Dominique;192.168.0.13;Login erfolgreich
-2026-04-11 09:35:00;ERROR;Luca;192.168.0.14;Datenbankfehler
+2026-04-11 08:00:00;INFO;Marco;Login erfolgreich;192.168.0.12
+2026-04-11 08:05:00;INFO;Dominique;Login erfolgreich;192.168.0.13
+2026-04-11 08:10:00;WARNING;Luca;Langsame Antwortzeit;192.168.0.14
+2026-04-11 08:15:00;ERROR;Marina;Datenbankfehler;192.168.0.15
+2026-04-11 08:20:00;INFO;Marco;Datei hochgeladen;192.168.0.12
+2026-04-11 08:25:00;ERROR;Luca;Verbindung abgelehnt;192.168.0.14
+2026-04-11 08:30:00;WARNING;Dominique;Timeout;192.168.0.13
+2026-04-11 08:35:00;INFO;Marina;Bericht generiert;192.168.0.15
+2026-04-11 08:40:00;ERROR;Marco;Datenbankfehler;192.168.0.12
+2026-04-11 08:45:00;INFO;Dominique;Logout;192.168.0.13
+2026-04-11 08:50:00;ERROR;Marina;Authentifizierung fehlgeschlagen;192.168.0.15
+2026-04-11 08:55:00;INFO;Luca;Login erfolgreich;192.168.0.14
+2026-04-11 09:00:00;WARNING;Marco;Hohe CPU-Auslastung;192.168.0.12
+2026-04-11 09:05:00;ERROR;Dominique;Verbindung abgelehnt;192.168.0.13
+2026-04-11 09:10:00;INFO;Marina;Logout;192.168.0.15
+2026-04-11 09:15:00;INFO;Luca;Datei heruntergeladen;192.168.0.14
+2026-04-11 09:20:00;ERROR;Marco;Authentifizierung fehlgeschlagen;192.168.0.12
+2026-04-11 09:25:00;WARNING;Marina;Timeout;192.168.0.15
+2026-04-11 09:30:00;INFO;Dominique;Login erfolgreich;192.168.0.13
+2026-04-11 09:35:00;ERROR;Luca;Datenbankfehler;192.168.0.14

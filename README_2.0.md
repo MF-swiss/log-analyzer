@@ -21,16 +21,29 @@ Dieses Projekt ist eine Java-Anwendung zur Analyse von Logdateien. Sie liest Log
 
 ---
 
+
 ## Aufbau der Logdatei
 
 Eine Logzeile hat das Format:
 ```
-YYYY-MM-DD HH:MM:SS;LEVEL;USER;MESSAGE;IP
+YYYY-MM-DD HH:MM:SS;LEVEL;USER;IP;MESSAGE
 ```
 Beispiel:
 ```
-2026-03-28 10:15:22;ERROR;admin;Login failed;192.168.1.10
+2026-04-11 08:00:00;INFO;Marco;192.168.0.12;Login erfolgreich
 ```
+Das Datumsformat wird beim Parsen explizit mit `yyyy-MM-dd HH:mm:ss` verarbeitet.
+Die Logdatei muss im Projektverzeichnis im Ordner `logs/app.log` liegen.
+
+---
+
+## Troubleshooting
+
+- **Keine Einträge im Bericht?**
+  - Prüfe, ob das Datumsformat in der Logdatei exakt `yyyy-MM-dd HH:mm:ss` ist (z. B. `2026-04-11 08:00:00`).
+  - Stelle sicher, dass die Datei `logs/app.log` existiert und das Programm aus dem Projektverzeichnis gestartet wird.
+  - Bei Fehlern wird eine Meldung in der Konsole ausgegeben (z. B. "Fehler beim Lesen der Datei").
+
 
 ---
 
